@@ -14,7 +14,7 @@ document.querySelector('.close-dialog').addEventListener('click',()=>dialog.clos
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 dialog.addEventListener('close',()=>previousFocus?.focus());
 const hero=document.querySelector('.hero'),trail=document.querySelector('.trail');
-const trailImages=['work-cover-qibao-clean-v2.jpg','work-cover-kangsong-clean-v2.jpg','work-cover-03.png','work-cover-04.png','work-cover-doufu-v2.jpg','work-cover-05-v2.png','home-video-cover.jpg'];
+const trailImages=['work-cover-qibao-clean-v3.jpg','work-cover-kangsong-clean-v2.jpg','work-cover-03.png','work-cover-04.png','work-cover-doufu-v2.jpg','work-cover-05-v2.png','home-video-cover.jpg'];
 const colors=['#c6b5ee','#edb9d2','#aac8eb','#bfd4b4'];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 let last={x:-1000,y:-1000},lastTime=0,index=0,colorIndex=-1;

@@ -5,7 +5,7 @@ import './work.css';
 import './work-overview.css';
 import ProjectDetail from './ProjectDetail';
 const projectInfo=[
- {name:'栖宝',description:'独居青年桌面 AI 情感陪伴机器人',image:'assets/work-cover-qibao-clean-v2.jpg'},
+ {name:'栖宝',description:'独居青年桌面 AI 情感陪伴机器人',image:'assets/work-cover-qibao-clean-v3.jpg'},
  {name:'康松',description:'防久坐智能按摩仪',image:'assets/work-cover-kangsong-clean-v2.jpg'},
  {name:'Imirror+',description:'家用智能穿衣镜'},
  {name:'小叙龙',description:'AI 儿童故事机设计'},
