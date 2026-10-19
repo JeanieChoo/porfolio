@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "porfolio",
+  "compatibility_date": "2026-10-19",
+  "build": { "command": "node build-cloudflare.cjs" },
+  "assets": { "directory": "./dist" }
+}

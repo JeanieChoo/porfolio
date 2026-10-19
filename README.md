@@ -19,3 +19,16 @@ Run `node build-site.cjs` to prepare the static website in `dist/`.
 After editing React components under `src/`, run `npm ci`, then the appropriate `node build-*.cjs` commands. Commit the resulting JavaScript and CSS bundles as well as the sources.
 
 The publication copy contains optimized photographs and a web-ready version of the video. Original source media remains in the local preview project.
+
+## Cloudflare Workers
+
+Use repository `JeanieChoo/porfolio`, branch `main`, root directory `/`.
+Set the deploy command to:
+
+```
+node build-cloudflare.cjs && npx wrangler deploy
+```
+
+`wrangler.jsonc` publishes only `dist/`. The Cloudflare build reuses the existing
+GitHub Pages URL for `lab-under-two-wings.mp4` because it exceeds the Workers
+25 MiB per-asset limit. GitHub Pages continues to publish that video locally.
