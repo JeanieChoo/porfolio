@@ -1,4 +1,4 @@
-import React,{useState,useRef} from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import {createRoot} from 'react-dom/client';
 import {motion,AnimatePresence,useReducedMotion} from 'motion/react';
 import './work.css';
@@ -17,6 +17,7 @@ function Cover({project}){return <div className="overview-cover-art has-image"><
 function WorkArchive(){
  const [selected,setSelected]=useState(null);
  const gallery=useRef(null),cardRefs=useRef([]),reduced=useReducedMotion();
+ useEffect(()=>{const host=gallery.current.parentElement;const showOverview=()=>setSelected(null);host.addEventListener('work:overview',showOverview);return()=>host.removeEventListener('work:overview',showOverview)},[]);
  function close(){const id=selected;setSelected(null);requestAnimationFrame(()=>cardRefs.current[id]?.querySelector('button')?.focus({preventScroll:true}))}
  return <div ref={gallery} className="overview-work is-overview">
 

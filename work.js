@@ -2,7 +2,7 @@ const workDialog=document.querySelector('#work-dialog');
 const workRoot=document.querySelector('#work-archive-root');
 let disposeWork=null,workRequest=0;
 async function openWork(){
-  if(workDialog.open)return;
+  if(workDialog.open){workRoot.dispatchEvent(new Event('work:overview'));workDialog.scrollTo({top:0,behavior:'instant'});return;}
   document.querySelector('#about-dialog')?.close();
   document.querySelector('#lab-dialog')?.close();
   workDialog.showModal();workDialog.scrollTop=0;
