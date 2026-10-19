@@ -9,7 +9,7 @@ const projectInfo=[
  {name:'康松',description:'防久坐智能按摩仪'},
  {name:'Imirror+',description:'家用智能穿衣镜'},
  {name:'小叙龙',description:'AI 儿童故事机设计'},
- {name:'兜福',description:'基于建德文化的产品包装设计',image:'assets/work-cover-06.png'},
+ {name:'兜福',description:'基于建德文化的产品包装设计',image:'assets/work-cover-doufu-v2.jpg'},
  {name:'绵竹有礼',description:'四川绵竹木版年画文创产品设计',image:'assets/work-cover-05-v2.png'}
 ];
 const projects=projectInfo.map((project,id)=>({...project,id,number:`0${id+1}`,category:id<5?'产品 + 界面':'平面文创',image:project.image||`assets/work-cover-0${id+1}.png`,alt:`${project.name} · ${project.description}封面`}));
