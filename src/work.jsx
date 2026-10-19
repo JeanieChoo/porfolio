@@ -19,7 +19,7 @@ function WorkArchive(){
  const gallery=useRef(null),cardRefs=useRef([]),reduced=useReducedMotion();
  function close(){const id=selected;setSelected(null);requestAnimationFrame(()=>cardRefs.current[id]?.querySelector('button')?.focus({preventScroll:true}))}
  return <div ref={gallery} className="overview-work is-overview">
-  <div className="overview-ruler" aria-hidden="true">{Array.from({length:15},(_,i)=><span key={i}>{i*100}</span>)}</div>
+
   <aside className="overview-info"><p className="overview-note">从日常需求与生活体验出发，探索产品、界面与文化表达，让想法逐步成为可感知的设计。</p><div className="overview-letter" aria-hidden="true">O</div></aside>
   <div className="overview-gallery">{projects.map(project=><article key={project.id} className="overview-project" data-index={project.id} ref={element=>cardRefs.current[project.id]=element}><button className="overview-project-cover" onClick={()=>{setSelected(project.id)}} aria-label={`查看作品 ${project.number} ${project.name}`}><Cover project={project}/><span className="overview-cover-open" aria-hidden="true">↗</span></button><div className="overview-caption"><div><h2>{project.name}</h2><span>{project.description}</span></div><p>{project.category}</p></div></article>)}</div>
   <AnimatePresence>{selected!==null&&<ProjectDetail project={projects[selected]} nextProject={projects[(selected+1)%projects.length]} onClose={close} onNext={()=>setSelected((selected+1)%projects.length)}/>}</AnimatePresence>
