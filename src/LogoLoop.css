@@ -1,0 +1,13 @@
+.logoloop{position:relative;overflow:hidden;isolation:isolate;padding:30px 0 32px}
+.logoloop__track{display:flex;width:max-content;will-change:transform}
+.logoloop__list{display:flex;align-items:center;gap:var(--logoloop-gap);padding:0 var(--logoloop-gap) 0 0;margin:0;list-style:none;flex-shrink:0}
+.logoloop__item{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logoloop--fade::before,.logoloop--fade::after{content:'';position:absolute;top:0;bottom:0;width:8%;z-index:2;pointer-events:none}
+.logoloop--fade::before{left:0;background:linear-gradient(to right,var(--logoloop-fadeColor,#fff),transparent)}
+.logoloop--fade::after{right:0;background:linear-gradient(to left,var(--logoloop-fadeColor,#fff),transparent)}
+.skill-logo{position:relative;display:grid;place-items:center;width:76px;height:64px;outline:none;cursor:default}
+.skill-logo img{width:54px;height:54px;object-fit:contain;display:block;user-select:none}
+.skill-logo-name{position:absolute;left:50%;top:calc(100% + 9px);transform:translateX(-50%);white-space:nowrap;font-size:13px;line-height:1.3;color:#39343b;opacity:0;pointer-events:none;transition:opacity .15s}
+.skill-logo:hover .skill-logo-name,.skill-logo:focus-visible .skill-logo-name{opacity:1}
+.skill-logo:focus-visible{outline:1px solid #39343b40;border-radius:8px}
+@media(max-width:700px){.skill-logo{width:60px;height:50px}.skill-logo img{width:43px;height:43px}.skill-logo-name{font-size:12px}.logoloop{padding-top:23px;padding-bottom:27px}}

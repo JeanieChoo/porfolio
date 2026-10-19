@@ -1,0 +1,13 @@
+const fs=require('fs');
+const path=require('path');
+const root=__dirname;
+const output=path.join(root,'dist');
+fs.mkdirSync(output,{recursive:true});
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const runtime=new Set(['index.html','app.js','work.js','lab.js','navigation-preview.js']);
+for(const match of html.matchAll(/(?:src|href)="([^"#]+\.(?:css|js))"/g))runtime.add(match[1]);
+for(const file of fs.readdirSync(root))if(/\.bundle\.(?:css|js)$/.test(file))runtime.add(file);
+for(const file of runtime)fs.copyFileSync(path.join(root,file),path.join(output,file));
+fs.cpSync(path.join(root,'assets'),path.join(output,'assets'),{recursive:true});
+fs.writeFileSync(path.join(output,'.nojekyll'),'');
+console.log(`Prepared ${runtime.size} runtime files and assets in dist/`);
